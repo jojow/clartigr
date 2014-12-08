@@ -1,0 +1,13 @@
+{
+  "invokers": {
+    "chef": {
+      "expose": true
+    }
+  },
+  "implementation": {
+    "title": "clartigr",
+    "type": "node",
+    "interface": "rest",
+    "generator_name": "any2api-generator-rest"
+  }
+}
