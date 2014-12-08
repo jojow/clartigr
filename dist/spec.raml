@@ -1,0 +1,65 @@
+#%RAML 0.8
+---
+title: clartigr
+baseUri: "http://{host}/api/{version}"
+version: v1
+schemas:
+  - run: "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"parameters\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"invoker_config\": {}\n      }\n    },\n    \"results\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"stdout\": { \"type\": \"string\" },\n        \"stderr\": { \"type\": \"string\" }\n      }\n    },\n    \"_links\": {\n      \"type\": \"object\",\n      \"patternProperties\": {\n        \"[a-zA-Z0-9-_.]+\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"href\": { \"type\": \"string\" }\n          }\n        }\n      }\n    },\n    \"_id\": { \"type\": \"string\" },\n    \"status\": { \"type\": \"string\" },\n    \"created\": { \"type\": \"string\" },\n    \"finished\": { \"type\": \"string\" },\n    \"failed\": { \"type\": \"string\" },\n    \"error\": { \"type\": \"string\" }\n  },\n  \"required\": [ \"parameters\" ]\n}\n"
+  - runCollection: "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"array\",\n  \"description\": \"List of runs\"\n}\n"
+  - runInvokerChef: "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"parameters\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"invoker_config\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"access\": {\n              \"description\": \"Currently supported access mechanisms: local, ssh\",\n              \"type\": \"string\",\n              \"default\": \"local\"\n            },\n            \"min_runs\": {\n              \"description\": \"Min number of runs\",\n              \"type\": \"integer\",\n              \"default\": 1\n            },\n            \"max_runs\": {\n              \"description\": \"Max number of runs\",\n              \"type\": \"integer\",\n              \"default\": 3\n            },\n            \"ssh_port\": {\n              \"description\": \"SSH port\",\n              \"type\": \"integer\",\n              \"default\": 22\n            },\n            \"ssh_host\": {\n              \"description\": \"SSH host (DNS name or IP address)\",\n              \"type\": \"integer\"\n            },\n            \"ssh_user\": {\n              \"description\": \"SSH username\",\n              \"type\": \"string\",\n              \"default\": \"ubuntu\"\n            },\n            \"ssh_private_key\": {\n              \"description\": \"SSH private key\",\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"run_list\": {\n          \"type\": \"array\",\n          \"default\": []\n        }\n      }\n    },\n    \"results\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"stderr\": {\n          \"type\": \"string\"\n        },\n        \"run_list\": {\n          \"type\": \"object\",\n          \"description\": \"Chef run list used for invocation\"\n        },\n        \"ps\": {\n          \"type\": \"string\",\n          \"description\": \"Running processes after invocation\"\n        },\n        \"logs\": {\n          \"type\": \"string\",\n          \"description\": \"Log messages put to stdout\"\n        }\n      }\n    },\n    \"_links\": {\n      \"type\": \"object\",\n      \"patternProperties\": {\n        \"[a-zA-Z0-9-_.]+\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"href\": {\n              \"type\": \"string\"\n            }\n          }\n        }\n      }\n    },\n    \"_id\": {\n      \"type\": \"string\"\n    },\n    \"status\": {\n      \"type\": \"string\"\n    },\n    \"created\": {\n      \"type\": \"string\"\n    },\n    \"finished\": {\n      \"type\": \"string\"\n    },\n    \"failed\": {\n      \"type\": \"string\"\n    },\n    \"error\": {\n      \"type\": \"string\"\n    },\n    \"executable\": {\n      \"type\": \"object\",\n      \"oneOf\": [\n        {\n          \"properties\": {\n            \"files\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"object\",\n                \"oneOf\": [\n                  {\n                    \"properties\": {\n                      \"path\": {\n                        \"type\": \"string\"\n                      },\n                      \"text\": {\n                        \"type\": \"string\"\n                      }\n                    }\n                  },\n                  {\n                    \"properties\": {\n                      \"path\": {\n                        \"type\": \"string\"\n                      },\n                      \"object\": {\n                        \"type\": \"object\"\n                      }\n                    }\n                  },\n                  {\n                    \"properties\": {\n                      \"path\": {\n                        \"type\": \"string\"\n                      },\n                      \"base64\": {\n                        \"type\": \"string\"\n                      }\n                    }\n                  },\n                  {\n                    \"properties\": {\n                      \"path\": {\n                        \"type\": \"string\"\n                      },\n                      \"url\": {\n                        \"type\": \"string\"\n                      }\n                    }\n                  }\n                ]\n              }\n            }\n          }\n        },\n        {\n          \"properties\": {\n            \"tarball_url\": {\n              \"type\": \"string\"\n            }\n          }\n        }\n      ]\n    }\n  },\n  \"required\": [\n    \"parameters\"\n  ]\n}"
+documentation:
+  - title: Invoker chef
+    content: "Use invoker to run arbitrary, supported executables in an ad-hoc manner."
+/invokers/chef/runs:
+  get:
+    description: List all runs
+    queryParameters:
+      status:
+        type: string
+        description: "Filter runs by status ('running', 'finished', etc.)"
+        example: running
+        required: false
+    responses:
+      "200":
+        body:
+          application/json:
+            schema: runCollection
+  post:
+    description: Add a new run
+    body:
+      application/json:
+        schema: runInvokerChef
+        example: "{\n  \"parameters\": {\n    \"invoker_config\": {\n      \"access\": \"local\",\n      \"min_runs\": 1,\n      \"max_runs\": 3,\n      \"ssh_port\": 22,\n      \"ssh_user\": \"ubuntu\"\n    },\n    \"some_param\": \"some_value\",\n    \"run_list\": []\n  }\n}"
+    responses:
+      "201":
+        body:
+          application/json:
+            schema: runInvokerChef
+            example: "{\n  \"_id\": \"eae393ac-b766-4ffc-a69b-d41e37b3f5b2\",\n  \"status\": \"running\",\n  \"parameters\": {\n    \"invoker_config\": {\n      \"access\": \"local\",\n      \"min_runs\": 1,\n      \"max_runs\": 3,\n      \"ssh_port\": 22,\n      \"ssh_user\": \"ubuntu\"\n    },\n    \"some_param\": \"some_value\",\n    \"run_list\": []\n  }\n}"
+  "/{runId}":
+    get:
+      description: Get run details
+      responses:
+        "200":
+          body:
+            application/json:
+              schema: runInvokerChef
+              example: "{\n  \"_id\": \"eae393ac-b766-4ffc-a69b-d41e37b3f5b2\",\n  \"status\": \"running\",\n  \"parameters\": {\n    \"invoker_config\": {\n      \"access\": \"local\",\n      \"min_runs\": 1,\n      \"max_runs\": 3,\n      \"ssh_port\": 22,\n      \"ssh_user\": \"ubuntu\"\n    },\n    \"some_param\": \"some_value\",\n    \"run_list\": []\n  }\n}"
+        "404":
+          body:
+            application/json:
+              example: "{ \"message\": \"run missing\" }\n"
+    put:
+      description: "Update run to set status, e.g., to 'running'"
+      body:
+        application/json:
+          schema: runInvokerChef
+          example: "{ \"status\": \"running\" }\n"
+      responses:
+        "200":
+          body:
+            application/json:
+              schema: runInvokerChef
+              example: "{\n  \"_id\": \"eae393ac-b766-4ffc-a69b-d41e37b3f5b2\",\n  \"status\": \"running\",\n  \"parameters\": {\n    \"invoker_config\": {\n      \"access\": \"local\",\n      \"min_runs\": 1,\n      \"max_runs\": 3,\n      \"ssh_port\": 22,\n      \"ssh_user\": \"ubuntu\"\n    },\n    \"some_param\": \"some_value\",\n    \"run_list\": []\n  }\n}"
+    delete:
+      description: Delete run permanently

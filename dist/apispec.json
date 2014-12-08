@@ -1,0 +1,19 @@
+{
+  "invokers": {
+    "chef": {
+      "expose": true,
+      "path": "invokers/chef"
+    }
+  },
+  "implementation": {
+    "title": "clartigr",
+    "type": "node",
+    "interface": "rest",
+    "generator_name": "any2api-generator-rest",
+    "path": ".",
+    "ports": [
+      "3000"
+    ]
+  },
+  "executables": {}
+}
