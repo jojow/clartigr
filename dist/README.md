@@ -1,21 +1,21 @@
 # clartigr
 
-Clone this repository and run:
+## Run
 
-    cd dist
+There are three option to run the API implementation:
 
 
 
-## Run directly
+### 1. Run directly
 
-You need to have Node.js >= 0.10 installed to run:
+You need to have Node.js installed to run:
 
     npm run prepare-runtime
     npm start
 
 
 
-## Run in Docker container
+### 2. Run in Docker container
 
 You need to have Docker installed to run:
 
@@ -24,8 +24,19 @@ You need to have Docker installed to run:
 
 
 
-## Run using Vagrant
+### 3. Run using Vagrant
 
 You need to have Vagrant installed to run:
 
     vagrant up
+
+
+
+## Access
+
+The endpoint(s) to access the API are:
+
+    http://{HOST}:3000
+
+
+If you run the API implementatio locally, `{HOST}` is most probably `localhost`.
