@@ -1,8 +1,10 @@
 # clartigr
 
+Cloud Artifact & Instance Manager
+
 ## Run
 
-There are three option to run the API implementation:
+There are three option to run clartigr:
 
 
 
@@ -38,5 +40,4 @@ The endpoint(s) to access the API are:
 
     http://{HOST}:3000
 
-
-If you run the API implementatio locally, `{HOST}` is most probably `localhost`.
+If you run the API implementation locally, `{HOST}` is most probably `localhost`.

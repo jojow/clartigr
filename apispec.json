@@ -6,6 +6,7 @@
   },
   "implementation": {
     "title": "clartigr",
+    "description": "Cloud Artifact & Instance Manager",
     "type": "node",
     "interface": "rest",
     "generator_name": "any2api-generator-rest"
