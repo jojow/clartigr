@@ -35,7 +35,7 @@ documentation:
         body:
           application/json:
             schema: runInvokerChef
-            example: "{\n  \"_id\": \"eae393ac-b766-4ffc-a69b-d41e37b3f5b2\",\n  \"status\": \"running\",\n  \"parameters\": {\n    \"invoker_config\": {\n      \"access\": \"local\",\n      \"min_runs\": 1,\n      \"max_runs\": 3,\n      \"ssh_port\": 22,\n      \"ssh_user\": \"ubuntu\"\n    },\n    \"some_param\": \"some_value\",\n    \"run_list\": []\n  }\n}"
+            example: "{\n  \"parameters\": {\n    \"invoker_config\": {\n      \"access\": \"local\",\n      \"min_runs\": 1,\n      \"max_runs\": 3,\n      \"ssh_port\": 22,\n      \"ssh_user\": \"ubuntu\"\n    },\n    \"some_param\": \"some_value\",\n    \"run_list\": []\n  },\n  \"_id\": \"eae393ac-b766-4ffc-a69b-d41e37b3f5b2\",\n  \"status\": \"running\"\n}"
   "/{runId}":
     get:
       description: Get run details
@@ -44,7 +44,7 @@ documentation:
           body:
             application/json:
               schema: runInvokerChef
-              example: "{\n  \"_id\": \"eae393ac-b766-4ffc-a69b-d41e37b3f5b2\",\n  \"status\": \"running\",\n  \"parameters\": {\n    \"invoker_config\": {\n      \"access\": \"local\",\n      \"min_runs\": 1,\n      \"max_runs\": 3,\n      \"ssh_port\": 22,\n      \"ssh_user\": \"ubuntu\"\n    },\n    \"some_param\": \"some_value\",\n    \"run_list\": []\n  }\n}"
+              example: "{\n  \"parameters\": {\n    \"invoker_config\": {\n      \"access\": \"local\",\n      \"min_runs\": 1,\n      \"max_runs\": 3,\n      \"ssh_port\": 22,\n      \"ssh_user\": \"ubuntu\"\n    },\n    \"some_param\": \"some_value\",\n    \"run_list\": []\n  },\n  \"_id\": \"eae393ac-b766-4ffc-a69b-d41e37b3f5b2\",\n  \"status\": \"running\"\n}"
         "404":
           body:
             application/json:
@@ -60,6 +60,6 @@ documentation:
           body:
             application/json:
               schema: runInvokerChef
-              example: "{\n  \"_id\": \"eae393ac-b766-4ffc-a69b-d41e37b3f5b2\",\n  \"status\": \"running\",\n  \"parameters\": {\n    \"invoker_config\": {\n      \"access\": \"local\",\n      \"min_runs\": 1,\n      \"max_runs\": 3,\n      \"ssh_port\": 22,\n      \"ssh_user\": \"ubuntu\"\n    },\n    \"some_param\": \"some_value\",\n    \"run_list\": []\n  }\n}"
+              example: "{\n  \"parameters\": {\n    \"invoker_config\": {\n      \"access\": \"local\",\n      \"min_runs\": 1,\n      \"max_runs\": 3,\n      \"ssh_port\": 22,\n      \"ssh_user\": \"ubuntu\"\n    },\n    \"some_param\": \"some_value\",\n    \"run_list\": []\n  },\n  \"_id\": \"eae393ac-b766-4ffc-a69b-d41e37b3f5b2\",\n  \"status\": \"running\"\n}"
     delete:
       description: Delete run permanently

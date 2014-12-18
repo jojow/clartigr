@@ -471,8 +471,6 @@
     "parameters"
   ]
 }</code></pre><p><strong>Example</strong>:</p><pre><code>{
-  "_id": "eae393ac-b766-4ffc-a69b-d41e37b3f5b2",
-  "status": "running",
   "parameters": {
     "invoker_config": {
       "access": "local",
@@ -483,7 +481,9 @@
     },
     "some_param": "some_value",
     "run_list": []
-  }
+  },
+  "_id": "eae393ac-b766-4ffc-a69b-d41e37b3f5b2",
+  "status": "running"
 }</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__invokers_chef_runs__runId_"><span class="parent">/invokers/chef/runs</span>/{runId}</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_invokers_chef_runs__runId__get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_invokers_chef_runs__runId__put"><span class="badge badge_put">put</span></a> <a href="#" data-toggle="modal" data-target="#_invokers_chef_runs__runId__delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel__invokers_chef_runs__runId_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_invokers_chef_runs__runId__get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get run details</p></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_invokers_chef_runs__runId__put" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Update run to set status, e.g., to &#39;running&#39;</p></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_invokers_chef_runs__runId__delete" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Delete run permanently</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_chef_runs__runId__get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/invokers/chef/runs</span>/{runId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get run details</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_chef_runs__runId__get_request" data-toggle="tab">Request</a></li><li><a href="#_invokers_chef_runs__runId__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_chef_runs__runId__get_request"><h3>URI Parameters</h3><ul><li><strong>runId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="_invokers_chef_runs__runId__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
@@ -655,8 +655,6 @@
     "parameters"
   ]
 }</code></pre><p><strong>Example</strong>:</p><pre><code>{
-  "_id": "eae393ac-b766-4ffc-a69b-d41e37b3f5b2",
-  "status": "running",
   "parameters": {
     "invoker_config": {
       "access": "local",
@@ -667,7 +665,9 @@
     },
     "some_param": "some_value",
     "run_list": []
-  }
+  },
+  "_id": "eae393ac-b766-4ffc-a69b-d41e37b3f5b2",
+  "status": "running"
 }</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "run missing" }
 </code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_chef_runs__runId__put"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put</span> <span class="parent">/invokers/chef/runs</span>/{runId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Update run to set status, e.g., to &#39;running&#39;</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_chef_runs__runId__put_request" data-toggle="tab">Request</a></li><li><a href="#_invokers_chef_runs__runId__put_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_chef_runs__runId__put_request"><h3>URI Parameters</h3><ul><li><strong>runId</strong>: <em>required (string)</em></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "$schema": "http://json-schema.org/draft-04/schema#",
@@ -1011,8 +1011,6 @@
     "parameters"
   ]
 }</code></pre><p><strong>Example</strong>:</p><pre><code>{
-  "_id": "eae393ac-b766-4ffc-a69b-d41e37b3f5b2",
-  "status": "running",
   "parameters": {
     "invoker_config": {
       "access": "local",
@@ -1023,5 +1021,7 @@
     },
     "some_param": "some_value",
     "run_list": []
-  }
+  },
+  "_id": "eae393ac-b766-4ffc-a69b-d41e37b3f5b2",
+  "status": "running"
 }</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_chef_runs__runId__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/invokers/chef/runs</span>/{runId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete run permanently</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_chef_runs__runId__delete_request" data-toggle="tab">Request</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_chef_runs__runId__delete_request"><h3>URI Parameters</h3><ul><li><strong>runId</strong>: <em>required (string)</em></li></ul></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#_invokers_chef_runs">/invokers/chef/runs</a></li></ul></div></div></div></div></body></html>
