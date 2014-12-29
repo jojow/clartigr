@@ -3,11 +3,11 @@ var expect = chai.expect;
 var fs = require('fs-extra');
 var path = require('path');
 var async = require('async');
-//var _ = require('lodash');
 var util = require('any2api-util');
 
 var timeout = 1000 * 60 * 15; // 15 minutes
 
+var invokerPath = path.join(__dirname, '..', '..');
 var specPathMysql = path.join(__dirname, 'mysql-apispec.json');
 
 var apiSpecMysql = {
@@ -16,7 +16,6 @@ var apiSpecMysql = {
       "parameters_schema": {
         "run_list": {
           "type": "array",
-          "mapping": "run_list",
           "schema": null,
           "default": [
             "recipe[mysql::client]"
@@ -39,7 +38,7 @@ var apiSpecMysql = {
   },
   "invokers": {
     "chef": {
-      "path": path.join(__dirname, '..'),
+      "path": invokerPath,
       "expose": true
     }
   },
@@ -82,9 +81,9 @@ var embeddedRun = {
 var cleanup = function(done) {
   async.series([
     async.apply(fs.remove, specPathMysql),
-    async.apply(fs.remove, path.join(__dirname, '..', 'invoker-status.json')),
-    async.apply(fs.remove, path.join(specPathMysql, '..', apiSpecMysql.executables.mysql.path, 'cookbook_dependencies')),
-    async.apply(fs.remove, path.join(specPathMysql, '..', apiSpecMysql.invokers.chef.path, 'node_modules'))
+    async.apply(fs.remove, path.join(path.dirname(specPathMysql), apiSpecMysql.executables.mysql.path, 'cookbook_dependencies')),
+    async.apply(fs.remove, path.join(invokerPath, 'invoker-status.json')),
+    async.apply(fs.remove, path.join(invokerPath, 'node_modules'))
   ], done);
 };
 
@@ -98,6 +97,8 @@ describe('mysql cookbook', function() {
   it('prepare buildtime', function(done) {
     util.prepareBuildtime({ apiSpec: apiSpecMysql,
                             executable_name: 'mysql' }, function(err) {
+                              if (err) throw err;
+                              
                               done();
                             });
   });
@@ -113,6 +114,15 @@ describe('mysql cookbook', function() {
 
                                done();
                              });
+  });
+
+  it('prepare runtime', function(done) {
+    util.prepareRuntime({ apiSpec: apiSpecMysql,
+                          executable_name: 'mysql' }, function(err) {
+                            if (err) throw err;
+                            
+                            done();
+                          });
   });
 
   it('invoke executable', function(done) {

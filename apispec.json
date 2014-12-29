@@ -2,6 +2,9 @@
   "invokers": {
     "chef": {
       "expose": true
+    },
+    "python": {
+      "expose": true
     }
   },
   "implementation": {

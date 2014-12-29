@@ -3,6 +3,10 @@
     "chef": {
       "expose": true,
       "path": "invokers/chef"
+    },
+    "python": {
+      "expose": true,
+      "path": "invokers/python"
     }
   },
   "implementation": {

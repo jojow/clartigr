@@ -113,7 +113,7 @@
         .list-group-item:hover {
             background-color: #f5f5f5;
         }
-    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>clartigr API documentation <small>version v1</small></h1><p>http://{host}/api/v1</p><h3 id="Invoker-chef"><a href="#Invoker-chef">Invoker chef</a></h3><p>Use this invoker to run arbitrary, supported executables in an ad-hoc manner.</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_invokers_chef_runs" class="panel-title">/invokers/chef/runs</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__invokers_chef_runs"><span class="parent"></span>/invokers/chef/runs</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_invokers_chef_runs_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_invokers_chef_runs_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__invokers_chef_runs" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_invokers_chef_runs_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>List all runs</p></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_invokers_chef_runs_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Add a new run</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_chef_runs_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/invokers/chef/runs</h4></div><div class="modal-body"><div class="alert alert-info"><p>List all runs</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_chef_runs_get_request" data-toggle="tab">Request</a></li><li><a href="#_invokers_chef_runs_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_chef_runs_get_request"><h3>Query Parameters</h3><ul><li><strong>status</strong>: <em>(string)</em><p>Filter runs by status (&#39;running&#39;, &#39;finished&#39;, etc.)</p><p><strong>Example</strong>:</p><pre><code>running</code></pre></li></ul></div><div class="tab-pane" id="_invokers_chef_runs_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>clartigr API documentation <small>version v1</small></h1><p>http://{host}/api/v1</p><h3 id="Invoker-chef"><a href="#Invoker-chef">Invoker chef</a></h3><p>Use this invoker to run arbitrary, supported executables in an ad-hoc manner.</p><h3 id="Invoker-python"><a href="#Invoker-python">Invoker python</a></h3><p>Use this invoker to run arbitrary, supported executables in an ad-hoc manner.</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_invokers_chef_runs" class="panel-title">/invokers/chef/runs</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__invokers_chef_runs"><span class="parent"></span>/invokers/chef/runs</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_invokers_chef_runs_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_invokers_chef_runs_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__invokers_chef_runs" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_invokers_chef_runs_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>List all runs</p></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_invokers_chef_runs_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Add a new run</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_chef_runs_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/invokers/chef/runs</h4></div><div class="modal-body"><div class="alert alert-info"><p>List all runs</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_chef_runs_get_request" data-toggle="tab">Request</a></li><li><a href="#_invokers_chef_runs_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_chef_runs_get_request"><h3>Query Parameters</h3><ul><li><strong>status</strong>: <em>(string)</em><p>Filter runs by status (&#39;running&#39;, &#39;finished&#39;, etc.)</p><p><strong>Example</strong>:</p><pre><code>running</code></pre></li></ul></div><div class="tab-pane" id="_invokers_chef_runs_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "array",
   "description": "List of runs"
@@ -1024,4 +1024,897 @@
   },
   "_id": "eae393ac-b766-4ffc-a69b-d41e37b3f5b2",
   "status": "running"
-}</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_chef_runs__runId__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/invokers/chef/runs</span>/{runId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete run permanently</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_chef_runs__runId__delete_request" data-toggle="tab">Request</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_chef_runs__runId__delete_request"><h3>URI Parameters</h3><ul><li><strong>runId</strong>: <em>required (string)</em></li></ul></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#_invokers_chef_runs">/invokers/chef/runs</a></li></ul></div></div></div></div></body></html>
+}</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_chef_runs__runId__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/invokers/chef/runs</span>/{runId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete run permanently</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_chef_runs__runId__delete_request" data-toggle="tab">Request</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_chef_runs__runId__delete_request"><h3>URI Parameters</h3><ul><li><strong>runId</strong>: <em>required (string)</em></li></ul></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_invokers_python_runs" class="panel-title">/invokers/python/runs</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__invokers_python_runs"><span class="parent"></span>/invokers/python/runs</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_invokers_python_runs_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_invokers_python_runs_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__invokers_python_runs" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_invokers_python_runs_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>List all runs</p></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_invokers_python_runs_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Add a new run</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_python_runs_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/invokers/python/runs</h4></div><div class="modal-body"><div class="alert alert-info"><p>List all runs</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_python_runs_get_request" data-toggle="tab">Request</a></li><li><a href="#_invokers_python_runs_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_python_runs_get_request"><h3>Query Parameters</h3><ul><li><strong>status</strong>: <em>(string)</em><p>Filter runs by status (&#39;running&#39;, &#39;finished&#39;, etc.)</p><p><strong>Example</strong>:</p><pre><code>running</code></pre></li></ul></div><div class="tab-pane" id="_invokers_python_runs_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "description": "List of runs"
+}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_python_runs_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/invokers/python/runs</h4></div><div class="modal-body"><div class="alert alert-info"><p>Add a new run</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_python_runs_post_request" data-toggle="tab">Request</a></li><li><a href="#_invokers_python_runs_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_python_runs_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "invoker_config": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "description": "Python version, e.g., 2.7.8",
+              "type": "string"
+            },
+            "requirements": {
+              "description": "Python requirements, written to requirements.txt",
+              "type": "string"
+            },
+            "env": {
+              "description": "Environment variables; overrides environment variables mapped from parameters",
+              "type": "object"
+            },
+            "stdin": {
+              "description": "Standard input; overrides standard input mapped from a parameter",
+              "type": "string"
+            },
+            "access": {
+              "description": "Currently supported access mechanisms: local, ssh",
+              "type": "string",
+              "default": "local"
+            },
+            "ssh_port": {
+              "description": "SSH port",
+              "type": "integer",
+              "default": 22
+            },
+            "ssh_host": {
+              "description": "SSH host (DNS name or IP address)",
+              "type": "integer"
+            },
+            "ssh_user": {
+              "description": "SSH username",
+              "type": "string",
+              "default": "ubuntu"
+            },
+            "ssh_private_key": {
+              "description": "SSH private key",
+              "type": "string"
+            }
+          }
+        },
+        "cmd": {
+          "type": "string",
+          "description": "Python command including all options and arguments",
+          "default": "python script.py"
+        }
+      }
+    },
+    "results": {
+      "type": "object",
+      "properties": {
+        "stdout": {
+          "type": "string"
+        },
+        "stderr": {
+          "type": "string"
+        }
+      }
+    },
+    "_links": {
+      "type": "object",
+      "patternProperties": {
+        "[a-zA-Z0-9-_.]+": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string"
+    },
+    "finished": {
+      "type": "string"
+    },
+    "failed": {
+      "type": "string"
+    },
+    "error": {
+      "type": "string"
+    },
+    "executable": {
+      "type": "object",
+      "oneOf": [
+        {
+          "properties": {
+            "files": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "oneOf": [
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "text": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "object": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "base64": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "tarball_url": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "parameters"
+  ]
+}</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "parameters": {
+    "invoker_config": {
+      "access": "local",
+      "ssh_port": 22,
+      "ssh_user": "ubuntu"
+    },
+    "some_param": "some_value",
+    "cmd": "python script.py"
+  }
+}</code></pre></div><div class="tab-pane" id="_invokers_python_runs_post_response"><h2>HTTP status code <a href="http://httpstatus.es/201" target="_blank">201</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "invoker_config": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "description": "Python version, e.g., 2.7.8",
+              "type": "string"
+            },
+            "requirements": {
+              "description": "Python requirements, written to requirements.txt",
+              "type": "string"
+            },
+            "env": {
+              "description": "Environment variables; overrides environment variables mapped from parameters",
+              "type": "object"
+            },
+            "stdin": {
+              "description": "Standard input; overrides standard input mapped from a parameter",
+              "type": "string"
+            },
+            "access": {
+              "description": "Currently supported access mechanisms: local, ssh",
+              "type": "string",
+              "default": "local"
+            },
+            "ssh_port": {
+              "description": "SSH port",
+              "type": "integer",
+              "default": 22
+            },
+            "ssh_host": {
+              "description": "SSH host (DNS name or IP address)",
+              "type": "integer"
+            },
+            "ssh_user": {
+              "description": "SSH username",
+              "type": "string",
+              "default": "ubuntu"
+            },
+            "ssh_private_key": {
+              "description": "SSH private key",
+              "type": "string"
+            }
+          }
+        },
+        "cmd": {
+          "type": "string",
+          "description": "Python command including all options and arguments",
+          "default": "python script.py"
+        }
+      }
+    },
+    "results": {
+      "type": "object",
+      "properties": {
+        "stdout": {
+          "type": "string"
+        },
+        "stderr": {
+          "type": "string"
+        }
+      }
+    },
+    "_links": {
+      "type": "object",
+      "patternProperties": {
+        "[a-zA-Z0-9-_.]+": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string"
+    },
+    "finished": {
+      "type": "string"
+    },
+    "failed": {
+      "type": "string"
+    },
+    "error": {
+      "type": "string"
+    },
+    "executable": {
+      "type": "object",
+      "oneOf": [
+        {
+          "properties": {
+            "files": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "oneOf": [
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "text": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "object": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "base64": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "tarball_url": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "parameters"
+  ]
+}</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "parameters": {
+    "invoker_config": {
+      "access": "local",
+      "ssh_port": 22,
+      "ssh_user": "ubuntu"
+    },
+    "some_param": "some_value",
+    "cmd": "python script.py"
+  },
+  "_id": "eae393ac-b766-4ffc-a69b-d41e37b3f5b2",
+  "status": "running"
+}</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__invokers_python_runs__runId_"><span class="parent">/invokers/python/runs</span>/{runId}</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_invokers_python_runs__runId__get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_invokers_python_runs__runId__put"><span class="badge badge_put">put</span></a> <a href="#" data-toggle="modal" data-target="#_invokers_python_runs__runId__delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel__invokers_python_runs__runId_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_invokers_python_runs__runId__get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get run details</p></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_invokers_python_runs__runId__put" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Update run to set status, e.g., to &#39;running&#39;</p></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_invokers_python_runs__runId__delete" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Delete run permanently</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_python_runs__runId__get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/invokers/python/runs</span>/{runId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get run details</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_python_runs__runId__get_request" data-toggle="tab">Request</a></li><li><a href="#_invokers_python_runs__runId__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_python_runs__runId__get_request"><h3>URI Parameters</h3><ul><li><strong>runId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="_invokers_python_runs__runId__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "invoker_config": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "description": "Python version, e.g., 2.7.8",
+              "type": "string"
+            },
+            "requirements": {
+              "description": "Python requirements, written to requirements.txt",
+              "type": "string"
+            },
+            "env": {
+              "description": "Environment variables; overrides environment variables mapped from parameters",
+              "type": "object"
+            },
+            "stdin": {
+              "description": "Standard input; overrides standard input mapped from a parameter",
+              "type": "string"
+            },
+            "access": {
+              "description": "Currently supported access mechanisms: local, ssh",
+              "type": "string",
+              "default": "local"
+            },
+            "ssh_port": {
+              "description": "SSH port",
+              "type": "integer",
+              "default": 22
+            },
+            "ssh_host": {
+              "description": "SSH host (DNS name or IP address)",
+              "type": "integer"
+            },
+            "ssh_user": {
+              "description": "SSH username",
+              "type": "string",
+              "default": "ubuntu"
+            },
+            "ssh_private_key": {
+              "description": "SSH private key",
+              "type": "string"
+            }
+          }
+        },
+        "cmd": {
+          "type": "string",
+          "description": "Python command including all options and arguments",
+          "default": "python script.py"
+        }
+      }
+    },
+    "results": {
+      "type": "object",
+      "properties": {
+        "stdout": {
+          "type": "string"
+        },
+        "stderr": {
+          "type": "string"
+        }
+      }
+    },
+    "_links": {
+      "type": "object",
+      "patternProperties": {
+        "[a-zA-Z0-9-_.]+": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string"
+    },
+    "finished": {
+      "type": "string"
+    },
+    "failed": {
+      "type": "string"
+    },
+    "error": {
+      "type": "string"
+    },
+    "executable": {
+      "type": "object",
+      "oneOf": [
+        {
+          "properties": {
+            "files": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "oneOf": [
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "text": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "object": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "base64": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "tarball_url": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "parameters"
+  ]
+}</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "parameters": {
+    "invoker_config": {
+      "access": "local",
+      "ssh_port": 22,
+      "ssh_user": "ubuntu"
+    },
+    "some_param": "some_value",
+    "cmd": "python script.py"
+  },
+  "_id": "eae393ac-b766-4ffc-a69b-d41e37b3f5b2",
+  "status": "running"
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "run missing" }
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_python_runs__runId__put"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put</span> <span class="parent">/invokers/python/runs</span>/{runId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Update run to set status, e.g., to &#39;running&#39;</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_python_runs__runId__put_request" data-toggle="tab">Request</a></li><li><a href="#_invokers_python_runs__runId__put_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_python_runs__runId__put_request"><h3>URI Parameters</h3><ul><li><strong>runId</strong>: <em>required (string)</em></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "invoker_config": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "description": "Python version, e.g., 2.7.8",
+              "type": "string"
+            },
+            "requirements": {
+              "description": "Python requirements, written to requirements.txt",
+              "type": "string"
+            },
+            "env": {
+              "description": "Environment variables; overrides environment variables mapped from parameters",
+              "type": "object"
+            },
+            "stdin": {
+              "description": "Standard input; overrides standard input mapped from a parameter",
+              "type": "string"
+            },
+            "access": {
+              "description": "Currently supported access mechanisms: local, ssh",
+              "type": "string",
+              "default": "local"
+            },
+            "ssh_port": {
+              "description": "SSH port",
+              "type": "integer",
+              "default": 22
+            },
+            "ssh_host": {
+              "description": "SSH host (DNS name or IP address)",
+              "type": "integer"
+            },
+            "ssh_user": {
+              "description": "SSH username",
+              "type": "string",
+              "default": "ubuntu"
+            },
+            "ssh_private_key": {
+              "description": "SSH private key",
+              "type": "string"
+            }
+          }
+        },
+        "cmd": {
+          "type": "string",
+          "description": "Python command including all options and arguments",
+          "default": "python script.py"
+        }
+      }
+    },
+    "results": {
+      "type": "object",
+      "properties": {
+        "stdout": {
+          "type": "string"
+        },
+        "stderr": {
+          "type": "string"
+        }
+      }
+    },
+    "_links": {
+      "type": "object",
+      "patternProperties": {
+        "[a-zA-Z0-9-_.]+": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string"
+    },
+    "finished": {
+      "type": "string"
+    },
+    "failed": {
+      "type": "string"
+    },
+    "error": {
+      "type": "string"
+    },
+    "executable": {
+      "type": "object",
+      "oneOf": [
+        {
+          "properties": {
+            "files": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "oneOf": [
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "text": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "object": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "base64": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "tarball_url": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "parameters"
+  ]
+}</code></pre><p><strong>Example</strong>:</p><pre><code>{ "status": "running" }
+</code></pre></div><div class="tab-pane" id="_invokers_python_runs__runId__put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "invoker_config": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "description": "Python version, e.g., 2.7.8",
+              "type": "string"
+            },
+            "requirements": {
+              "description": "Python requirements, written to requirements.txt",
+              "type": "string"
+            },
+            "env": {
+              "description": "Environment variables; overrides environment variables mapped from parameters",
+              "type": "object"
+            },
+            "stdin": {
+              "description": "Standard input; overrides standard input mapped from a parameter",
+              "type": "string"
+            },
+            "access": {
+              "description": "Currently supported access mechanisms: local, ssh",
+              "type": "string",
+              "default": "local"
+            },
+            "ssh_port": {
+              "description": "SSH port",
+              "type": "integer",
+              "default": 22
+            },
+            "ssh_host": {
+              "description": "SSH host (DNS name or IP address)",
+              "type": "integer"
+            },
+            "ssh_user": {
+              "description": "SSH username",
+              "type": "string",
+              "default": "ubuntu"
+            },
+            "ssh_private_key": {
+              "description": "SSH private key",
+              "type": "string"
+            }
+          }
+        },
+        "cmd": {
+          "type": "string",
+          "description": "Python command including all options and arguments",
+          "default": "python script.py"
+        }
+      }
+    },
+    "results": {
+      "type": "object",
+      "properties": {
+        "stdout": {
+          "type": "string"
+        },
+        "stderr": {
+          "type": "string"
+        }
+      }
+    },
+    "_links": {
+      "type": "object",
+      "patternProperties": {
+        "[a-zA-Z0-9-_.]+": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string"
+    },
+    "finished": {
+      "type": "string"
+    },
+    "failed": {
+      "type": "string"
+    },
+    "error": {
+      "type": "string"
+    },
+    "executable": {
+      "type": "object",
+      "oneOf": [
+        {
+          "properties": {
+            "files": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "oneOf": [
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "text": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "object": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "base64": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "tarball_url": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "parameters"
+  ]
+}</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "parameters": {
+    "invoker_config": {
+      "access": "local",
+      "ssh_port": 22,
+      "ssh_user": "ubuntu"
+    },
+    "some_param": "some_value",
+    "cmd": "python script.py"
+  },
+  "_id": "eae393ac-b766-4ffc-a69b-d41e37b3f5b2",
+  "status": "running"
+}</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_invokers_python_runs__runId__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/invokers/python/runs</span>/{runId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete run permanently</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_invokers_python_runs__runId__delete_request" data-toggle="tab">Request</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_invokers_python_runs__runId__delete_request"><h3>URI Parameters</h3><ul><li><strong>runId</strong>: <em>required (string)</em></li></ul></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#_invokers_chef_runs">/invokers/chef/runs</a></li><li><a href="#_invokers_python_runs">/invokers/python/runs</a></li></ul></div></div></div></div></body></html>
