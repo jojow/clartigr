@@ -5,6 +5,12 @@
     },
     "python": {
       "expose": true
+    },
+    "ruby": {
+      "expose": true
+    },
+    "shell": {
+      "expose": true
     }
   },
   "implementation": {

@@ -32,11 +32,11 @@ var apiSpecScript = {
         }
       },
       "path": ".",
-      "invoker_name": "python"
+      "invoker_name": "shell"
     }
   },
   "invokers": {
-    "python": {
+    "shell": {
       "path": invokerPath,
       "expose": true
     }
@@ -48,13 +48,12 @@ var runScript = {
   parameters: {
     input_file: 'some input through a file',
     input_env: 'some more input through env',
-    cmd: 'python script.py foo=bar',
+    cmd: 'sh script.sh foo=bar',
     invoker_config: {
       env: {
         FOO: 'some input through env'
       },
       stdin: 'hello world',
-      requirements: 'requests==2.5.0\nPyYAML==3.11\n',
       access: 'local'
     }
   }
@@ -71,7 +70,7 @@ var cleanup = function(done) {
 
 
 
-describe('script.py', function() {
+describe('script.sh', function() {
   this.timeout(timeout);
 
   before(cleanup);

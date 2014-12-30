@@ -1,14 +1,14 @@
 {
-  "name": "any2api-invoker-python",
-  "version": "0.1.5",
+  "name": "any2api-invoker-ruby",
+  "version": "0.1.0",
   "author": {
     "name": "Johannes Wettinger",
     "email": "mail@jojow.de"
   },
-  "description": "Python invoker for any2api",
+  "description": "Ruby invoker for any2api",
   "repository": {
     "type": "git",
-    "url": "https://github.com/any2api/any2api-invoker-python"
+    "url": "https://github.com/any2api/any2api-invoker-ruby"
   },
   "contributors": [
     {
@@ -19,7 +19,7 @@
   "license": "MIT",
   "keywords": [
     "any2api",
-    "python",
+    "ruby",
     "invoker"
   ],
   "preferGlobal": false,
@@ -45,14 +45,14 @@
   "engines": {
     "node": ">= 0.10"
   },
-  "gitHead": "61378737c635f7402f54abf670ec39ff2a7f3d30",
+  "gitHead": "4d9b461542bb886a6f5ce2d64a77724dcfb11e51",
   "bugs": {
-    "url": "https://github.com/any2api/any2api-invoker-python/issues"
+    "url": "https://github.com/any2api/any2api-invoker-ruby/issues"
   },
-  "homepage": "https://github.com/any2api/any2api-invoker-python",
-  "_id": "any2api-invoker-python@0.1.5",
-  "_shasum": "ef6fd325974c0987663ffb2baa36bb5d6ef94027",
-  "_from": "any2api-invoker-python@*",
+  "homepage": "https://github.com/any2api/any2api-invoker-ruby",
+  "_id": "any2api-invoker-ruby@0.1.0",
+  "_shasum": "8a37c7fef39c74ad8c3ce1be9b901919a0299941",
+  "_from": "any2api-invoker-ruby@*",
   "_npmVersion": "1.4.28",
   "_npmUser": {
     "name": "johannesw",
@@ -65,9 +65,9 @@
     }
   ],
   "dist": {
-    "shasum": "ef6fd325974c0987663ffb2baa36bb5d6ef94027",
-    "tarball": "http://registry.npmjs.org/any2api-invoker-python/-/any2api-invoker-python-0.1.5.tgz"
+    "shasum": "8a37c7fef39c74ad8c3ce1be9b901919a0299941",
+    "tarball": "http://registry.npmjs.org/any2api-invoker-ruby/-/any2api-invoker-ruby-0.1.0.tgz"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/any2api-invoker-python/-/any2api-invoker-python-0.1.5.tgz"
+  "_resolved": "https://registry.npmjs.org/any2api-invoker-ruby/-/any2api-invoker-ruby-0.1.0.tgz"
 }

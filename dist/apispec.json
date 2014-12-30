@@ -7,6 +7,14 @@
     "python": {
       "expose": true,
       "path": "invokers/python"
+    },
+    "ruby": {
+      "expose": true,
+      "path": "invokers/ruby"
+    },
+    "shell": {
+      "expose": true,
+      "path": "invokers/shell"
     }
   },
   "implementation": {

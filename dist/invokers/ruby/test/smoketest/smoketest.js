@@ -32,11 +32,11 @@ var apiSpecScript = {
         }
       },
       "path": ".",
-      "invoker_name": "python"
+      "invoker_name": "ruby"
     }
   },
   "invokers": {
-    "python": {
+    "ruby": {
       "path": invokerPath,
       "expose": true
     }
@@ -48,13 +48,13 @@ var runScript = {
   parameters: {
     input_file: 'some input through a file',
     input_env: 'some more input through env',
-    cmd: 'python script.py foo=bar',
+    cmd: 'bundle exec ruby script.rb foo=bar',
     invoker_config: {
       env: {
         FOO: 'some input through env'
       },
       stdin: 'hello world',
-      requirements: 'requests==2.5.0\nPyYAML==3.11\n',
+      gemfile: 'source \'https://rubygems.org\'\ngem \'nokogiri\'\ngem \'rack\', \'~>1.1\'\n',
       access: 'local'
     }
   }
@@ -71,7 +71,7 @@ var cleanup = function(done) {
 
 
 
-describe('script.py', function() {
+describe('script.rb', function() {
   this.timeout(timeout);
 
   before(cleanup);

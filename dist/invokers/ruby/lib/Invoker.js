@@ -25,11 +25,11 @@ module.exports = function(spec) {
 
     var config = params.invoker_config || {};
 
-    config.version = config.version || '2.7.8';
+    config.version = config.version || '2.2.0';
     config.access = config.access || 'local';
     config.stdin = config.stdin || '';
     config.env = config.env || {};
-    config.env.PYENV_ROOT = config.env.PYENV_ROOT || '/opt/pyenv';
+    config.env.RBENV_ROOT = config.env.RBENV_ROOT || '/opt/rbenv';
 
     var runParams = params._;
     delete params._;
@@ -79,25 +79,16 @@ module.exports = function(spec) {
       install: [
         'if type apt-get > /dev/null; then sudo apt-get -y update && sudo apt-get -y install curl git; fi',
         'if type yum > /dev/null; then sudo yum -y install curl git; fi',
-        //'export PYENV_ROOT="/opt/pyenv"',
-        'curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash' // sudo -E bash
-        //'echo \'export PYENV_ROOT="$HOME/.pyenv"\' >> ~/.bash_profile',
-        //'echo \'export PATH="$PYENV_ROOT/bin:$PATH"\' >> ~/.bash_profile',
-        //'echo \'eval "$(pyenv init -)"\' >> ~/.bash_profile',
-        //'echo \'eval "$(pyenv virtualenv-init -)"\' >> ~/.bash_profile',
-        //'source ~/.bash_profile'
+        'curl https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash' // sudo -E bash
       ].join(' && '),
       run: [
-        //'export PYENV_ROOT="/opt/pyenv"',
-        //'export PYENV_ROOT="$HOME/.pyenv"',
-        'export PATH="$PYENV_ROOT/bin:$PATH"',
-        'eval "$(pyenv init -)"',
-        'eval "$(pyenv virtualenv-init -)"',
-        'pyenv install -s ' + config.version,
-        'pyenv rehash',
-        'pyenv virtualenv -f ' + config.version + ' ' + runParams.run_id,
-        'pyenv activate ' + runParams.run_id,
-        'pip install -r requirements.txt',
+        'export PATH="$RBENV_ROOT/bin:$PATH"',
+        'eval "$(rbenv init -)"',
+        'rbenv install -s ' + config.version,
+        'rbenv rehash',
+        'rbenv local ' + config.version,
+        'gem install bundler',
+        'bundle install --binstubs --path ' + remoteExecPath,
         'echo "' + config.stdin + '" | ' + params.cmd
       ].join(' && ')
     };
@@ -130,10 +121,17 @@ module.exports = function(spec) {
         async.apply(access.mkdir, { path: path.join(remoteExecPath, '..') }),
         async.apply(access.copyDirToRemote, { sourcePath: localExecPath, targetPath: remoteExecPath }),
         function(callback) {
-          access.exists({ path: path.join(remoteExecPath, 'requirements.txt') }, function(err, exists) {
+          access.exists({ path: path.join(remoteExecPath, 'Gemfile') }, function(err, exists) {
             if (err || exists) return callback(err);
 
-            access.writeFile({ path: path.join(remoteExecPath, 'requirements.txt'), content: config.requirements || '' }, callback);
+            access.writeFile({ path: path.join(remoteExecPath, 'Gemfile'), content: config.gemfile || '' }, callback);
+          });
+        },
+        function(callback) {
+          access.exists({ path: path.join(remoteExecPath, 'Gemfile.lock') }, function(err, exists) {
+            if (err || exists) return callback(err);
+
+            access.writeFile({ path: path.join(remoteExecPath, 'Gemfile.lock'), content: config.gemfile_lock || '' }, callback);
           });
         },
         async.apply(util.writeParameters, {
@@ -172,7 +170,7 @@ module.exports = function(spec) {
 
     async.series([
       function(callback) {
-        access.exists({ path: config.env.PYENV_ROOT }, function(err, exists) {
+        access.exists({ path: config.env.RBENV_ROOT }, function(err, exists) {
           if (err) callback(err);
           else if (!exists) install(callback);
           else callback();
