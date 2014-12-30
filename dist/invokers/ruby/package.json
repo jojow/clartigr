@@ -1,6 +1,6 @@
 {
   "name": "any2api-invoker-ruby",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Johannes Wettinger",
     "email": "mail@jojow.de"
@@ -45,15 +45,15 @@
   "engines": {
     "node": ">= 0.10"
   },
-  "gitHead": "4d9b461542bb886a6f5ce2d64a77724dcfb11e51",
+  "gitHead": "8f923ed5ce2ea0f4fc29463f7489e068ca567950",
   "bugs": {
     "url": "https://github.com/any2api/any2api-invoker-ruby/issues"
   },
   "homepage": "https://github.com/any2api/any2api-invoker-ruby",
-  "_id": "any2api-invoker-ruby@0.1.0",
-  "_shasum": "8a37c7fef39c74ad8c3ce1be9b901919a0299941",
+  "_id": "any2api-invoker-ruby@0.1.1",
+  "_shasum": "75f3191975549d9a9518ed130b4c5793ee694a3a",
   "_from": "any2api-invoker-ruby@*",
-  "_npmVersion": "1.4.28",
+  "_npmVersion": "2.0.0",
   "_npmUser": {
     "name": "johannesw",
     "email": "mail@jojow.de"
@@ -65,9 +65,9 @@
     }
   ],
   "dist": {
-    "shasum": "8a37c7fef39c74ad8c3ce1be9b901919a0299941",
-    "tarball": "http://registry.npmjs.org/any2api-invoker-ruby/-/any2api-invoker-ruby-0.1.0.tgz"
+    "shasum": "75f3191975549d9a9518ed130b4c5793ee694a3a",
+    "tarball": "http://registry.npmjs.org/any2api-invoker-ruby/-/any2api-invoker-ruby-0.1.1.tgz"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/any2api-invoker-ruby/-/any2api-invoker-ruby-0.1.0.tgz"
+  "_resolved": "https://registry.npmjs.org/any2api-invoker-ruby/-/any2api-invoker-ruby-0.1.1.tgz"
 }
