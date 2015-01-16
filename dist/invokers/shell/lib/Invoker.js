@@ -29,14 +29,14 @@ module.exports = function(spec) {
     config.stdin = config.stdin || '';
     config.env = config.env || {};
 
-    var runParams = params._;
+    var instanceParams = params._;
     delete params._;
 
-    runParams.run_id = runParams.run_id || uuid.v4();
+    instanceParams.instance_id = instanceParams.instance_id || uuid.v4();
 
-    if (!runParams.run_path) return done(new Error('_.run_path parameter missing'));
+    if (!instanceParams.instance_path) return done(new Error('_.instance_path parameter missing'));
 
-    var executable = apiSpec.executables[runParams.executable_name];
+    var executable = apiSpec.executables[instanceParams.executable_name];
 
     var localExecPath = path.resolve(apiSpec.apispec_path, '..', executable.path);
     var remoteExecPath = path.join('/', 'tmp', shortId.generate());
@@ -44,7 +44,7 @@ module.exports = function(spec) {
     // Find parameters that need to be mapped to environment variables
     _.each(util.getMappedParametersSync({
       apiSpec: apiSpec,
-      executable_name: runParams.executable_name,
+      executable_name: instanceParams.executable_name,
       parameters: params,
       mappingType: 'env'
     }), function(def, name) {
@@ -56,7 +56,7 @@ module.exports = function(spec) {
     // Find parameter that need to be mapped to stdin
     _.each(util.getMappedParametersSync({
       apiSpec: apiSpec,
-      executable_name: runParams.executable_name,
+      executable_name: instanceParams.executable_name,
       parameters: params,
       mappingType: 'stdin'
     }), function(def, name) {
@@ -82,7 +82,7 @@ module.exports = function(spec) {
         async.apply(access.copyDirToRemote, { sourcePath: localExecPath, targetPath: remoteExecPath }),
         async.apply(util.writeParameters, {
           apiSpec: apiSpec,
-          executable_name: runParams.executable_name,
+          executable_name: instanceParams.executable_name,
           parameters: params,
           remotePath: remoteExecPath,
           access: access
@@ -109,8 +109,8 @@ module.exports = function(spec) {
         },
         async.apply(util.collectResults, {
           apiSpec: apiSpec,
-          executable_name: runParams.executable_name,
-          localPath: runParams.run_path,
+          executable_name: instanceParams.executable_name,
+          localPath: instanceParams.instance_path,
           remotePath: remoteExecPath,
           access: access
         })

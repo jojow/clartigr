@@ -8,43 +8,12 @@ var util = require('any2api-util');
 var timeout = 1000 * 60 * 15; // 15 minutes
 
 var invokerPath = path.join(__dirname, '..', '..');
-var specPathScript = path.join(__dirname, 'script-apispec.json');
+var specPathScript = path.join(__dirname, 'apispec_copy.json');
 
-var apiSpecScript = {
-  "executables": {
-    "script": {
-      "parameters_schema": {
-        "input_file": {
-          "type": "string",
-          "mapping": "file",
-          "file_path": "./input.txt"
-        },
-        "input_env": {
-          "type": "string",
-          "mapping": "env"
-        }
-      },
-      "results_schema": {
-        "output_file": {
-          "type": "string",
-          "mapping": "file",
-          "file_path": "./output.txt"
-        }
-      },
-      "path": ".",
-      "invoker_name": "ruby"
-    }
-  },
-  "invokers": {
-    "ruby": {
-      "path": invokerPath,
-      "expose": true
-    }
-  },
-  apispec_path: specPathScript
-};
+var apiSpecScript = JSON.parse(fs.readFileSync(path.join(__dirname, 'apispec.json'), 'utf8'));
+apiSpecScript.apispec_path = specPathScript;
 
-var runScript = {
+var instanceScript = {
   parameters: {
     input_file: 'some input through a file',
     input_env: 'some more input through env',
@@ -114,12 +83,12 @@ describe('script.rb', function() {
   it('invoke executable', function(done) {
     util.invokeExecutable({ apiSpec: apiSpecScript,
                             executable_name: 'script',
-                            run: runScript }, function(err, run) {
+                            instance: instanceScript }, function(err, instance) {
                               if (err) throw err;
 
-                              expect(run.finished).to.exist;
+                              expect(instance.finished).to.exist;
 
-                              console.log(run);
+                              console.log(instance);
 
                               done();
                             });
