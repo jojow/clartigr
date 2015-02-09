@@ -46,6 +46,7 @@
       "type": "string",
       "default": "sh script.sh"
     }
-  }
+  },
+  "parameters_required": [ "cmd" ]
 }
 

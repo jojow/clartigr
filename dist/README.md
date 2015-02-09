@@ -6,7 +6,7 @@ Cloud Artifact & Instance Manager
 
 ## Run
 
-There are three option to run clartigr:
+There are three options to run clartigr:
 
 
 
